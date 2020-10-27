@@ -1,0 +1,82 @@
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body ><hr>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content white-text">
+          <div class="row">
+            <div class="col s5"> 
+              <form #empleadosForm="ngForm" (ngSubmit)="onSubmit(empleadosForm)">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="empleadosService.selectedEmpleados._id">
+                <div class="row">
+                  <div class="input-field col s12"><br>
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="empleadosService.selectedEmpleados.name" placeholder="Ingrese Nombre Completo" required>
+                    <label>Nombre :
+                      <label class="red-text">*</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12"><br>
+                    <input type="text" name="position" #name="ngModel" [(ngModel)]="empleadosService.selectedEmpleados.position" placeholder="Eg : Snr. Developer">
+                    <label>Posicion :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12"><br>
+                    <input type="text" name="office" #name="ngModel" [(ngModel)]="empleadosService.selectedEmpleados.office" placeholder="Ingresar Locacion de la Oficina">
+                    <label>Oficina :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12"><br>
+                    <input type="text" name="salary" #name="ngModel" [(ngModel)]="empleadosService.selectedEmpleados.salary" placeholder="Salario Minimo">
+                    <label>Salario :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <button class="btn btn-custom right" type="button" (click)="ngOnInit(empleadosForm)">Limpiar Formulario</button>
+                    <button class="btn btn-custom right" type="submit" [disabled]="!empleadosForm.valid">Enviar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col s7"><br>
+                <table class="responsive-table highlight">
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Posicion</th>
+                        <th>Oficina</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tr *ngFor="let emp of empleadosService.empleados">
+                      <td>{{emp.name}}</td>
+                      <td>{{emp.position}}</td>
+                      <td>{{emp.office}}</td>
+                      <td>
+                          <a class="action-btn" (click)="onEdit(emp)">
+                            <i class="material-icons">edit</i>
+                          </a>
+                          <a class="action-btn" (click)="onDelete(emp._id,empleadosForm)">
+                            <i class="material-icons">delete</i>
+                          </a>
+                        </td>
+                    </tr>
+                  </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

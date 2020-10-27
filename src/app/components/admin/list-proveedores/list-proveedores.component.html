@@ -1,0 +1,48 @@
+<section class="row mt-5">
+  <div class="col">
+    <button class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalproveedores">Nuevo Proveedor</button>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">RFC</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Credito</th>
+          <th scope="col">&nbsp;</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let proveedor of proveedores; index as i">
+          <th scope="row">{{i+1}}</th>
+          <td>{{proveedor.nombre}}</td>
+          <td>{{proveedor.rfc}}</td>
+          <td>{{proveedor.correo}}</td>
+          <td>{{proveedor.telefono}}</td>
+          <td>{{proveedor.direccion}}</td>
+          <td>{{proveedor.clifrec}}</td>
+          <td *ngIf="proveedores.userUid == userUid || isAdmin == true; else noOwner">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalproveedores" (click)="onPreUpdateproveedor(proveedor)">Modificar</button>
+          </td>
+          <ng-template #noOwner>
+            <td>
+              <button class="btn btn-secondary" disabled="true">Modificar</button>
+            </td>
+          </ng-template>
+          <td *ngIf="isAdmin == true; else noAdmin">
+            <button class="btn btn-danger" (click)="onDeleteproveedor(proveedor.id)">Borrar</button>
+          </td>
+          <ng-template #noAdmin>
+            <td>
+              <button class="btn btn-danger" disabled="true">Borrar</button>
+            </td>
+          </ng-template>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<app-modal-proveedores [userUid]="userUid"></app-modal-proveedores>

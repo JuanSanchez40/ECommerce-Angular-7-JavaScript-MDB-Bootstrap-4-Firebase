@@ -1,0 +1,54 @@
+<div class="modal fade" id="modalclientes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ !this.dataApi.selectedclientes.id ? 'Nuevo Cliente' : 'Actualizar Cliente'}}
+        </h5>
+        <button type="button" class="close" #btnClose data-dismiss="modal" (click)="onClosecliente(formcliente)" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name="formcliente" #formcliente="ngForm" (ngSubmit)="onSavecliente(formcliente)">
+          <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedclientes.id">
+          <input type="hidden" name="userUid" [value]="userUid">
+          <div class="form-group">
+            <label for="nombre" class="col-form-label">Nombre:</label>
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="this.dataApi.selectedclientes.nombre">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="rfc">RFC</label>
+              <input type="text" name="rfc" class="form-control" placeholder="RFC" [(ngModel)]="this.dataApi.selectedclientes.rfc">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="correo">Correo</label>
+              <input type="text" name="correo" class="form-control" placeholder="Correo" [(ngModel)]="this.dataApi.selectedclientes.correo">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="telefono">Telefono</label>
+              <input type="text" name="telefono" class="form-control" placeholder="Tel" [(ngModel)]="this.dataApi.selectedclientes.telefono">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="direccion">Direccion</label>
+              <input type="text" name="direccion" class="form-control" placeholder="Dir" [(ngModel)]="this.dataApi.selectedclientes.direccion">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="clifrec">Cliente Frecuente</label>
+                <select name="clifrec" class="form-control" [(ngModel)]="this.dataApi.selectedclientes.clifrec">
+                  <option value="Si">Si</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal" (click)="onClosecliente(formcliente)">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar Producto</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

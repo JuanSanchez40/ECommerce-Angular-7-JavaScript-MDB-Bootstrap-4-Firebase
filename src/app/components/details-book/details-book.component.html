@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+<body>
+<section id="book" class="mt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+              <div class="card_book">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <p>
+                      <img class="img-fluid" src="{{book.portada}}" alt="{{book.titulo}}">
+                    </p>
+                    <h4 class="card-title">{{book.titulo}}</h4>
+                    <p class="card-text">
+                      {{book.descripcion}}
+                    </p>
+                    <h2 *ngIf="paypalLoad">Paypal button is loading</h2>
+                    <h2><span [(ngModel)]="book.precio" class="badge badge-primary">BUY for ${{book.precio}}</span></h2>
+                    <div id="paypal-checkout-btn"></div>
+                  </div>
+                  </div>
+             </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<section class="row mt-5">
+  <div class="col">
+    <button class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalempleados">Nuevo Empleado</button>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">RFC</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Puesto</th>  
+          <th scope="col">Sueldo</th>          
+          <th scope="col">&nbsp;</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empleado of empleados; index as i">
+          <th scope="row">{{i+1}}</th>
+          <td>{{empleado.nombre}}</td>
+          <td>{{empleado.rfc}}</td>
+          <td>{{empleado.correo}}</td>
+          <td>{{empleado.telefono}}</td>
+          <td>{{empleado.direccion}}</td>
+          <td>{{empleado.puesto}}</td>
+          <td>{{empleado.sueldo}}</td>
+          <td *ngIf="empleados.userUid == userUid || isAdmin == true; else noOwner">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalempleados" (click)="onPreUpdateempleado(empleado)">Modificar</button>
+          </td>
+          <ng-template #noOwner>
+            <td>
+              <button class="btn btn-secondary" disabled="true">Modificar</button>
+            </td>
+          </ng-template>
+          <td *ngIf="isAdmin == true; else noAdmin">
+            <button class="btn btn-danger" (click)="onDeleteempleado(empleado.id)">Borrar</button>
+          </td>
+          <ng-template #noAdmin>
+            <td>
+              <button class="btn btn-danger" disabled="true">Borrar</button>
+            </td>
+          </ng-template>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<app-modal-empleados [userUid]="userUid"></app-modal-empleados>

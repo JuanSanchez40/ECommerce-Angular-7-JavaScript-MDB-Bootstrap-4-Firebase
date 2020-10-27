@@ -1,0 +1,95 @@
+<div class="image">
+    
+<h1 class="h1 font-weight-bold text-left mb-5 pt-4">
+  
+  <button mdbBtn type="button" gradient="peach" rounded="true" mdbWavesEffect>Ir a Productos</button></h1>
+<h2 class="h1 font-weight-bold text-center mb-5 pt-4">Tecnologia de Alta Precisión</h2>
+<div class="row">
+    <div class="col-lg-4 col-md-6 mb-4">
+    <a><img class="img-fluid z-depth-1" src="..\assets\imagenes\sistemas opticos.jpg" alt="video" (click)="videoModal1.show()"></a>
+    <h6 class="text-uppercase text-center font-weight-bold ">Click en la Imagen para ver Video!</h6>
+  </div>
+  <div class="col-lg-4 col-md-6 mb-4">
+    <a><img class="img-fluid z-depth-1" src="..\assets\imagenes\gps\gps gnss.jpg" alt="video" (click)="videoModal2.show()"></a>
+    <h6 class="text-uppercase text-center font-weight-bold ">Click en la Imagen para ver Video!</h6>
+  </div>
+  <div class="col-lg-4 col-md-6 mb-4">
+    <a><img class="img-fluid z-depth-1" src="..\assets\imagenes\drones\ebee-5755_1b.jpg" alt="video" (click)="videoModal3.show()"></a>
+    <h6 class="text-uppercase text-center font-weight-bold ">Click en la Imagen para ver Video!</h6>
+  </div>
+</div>
+<div mdbModal #videoModal1="mdbModal"  class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myVideoModal1Label"
+aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body mb-0 p-0">
+        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+          <video class="embed-responsive-item " src="..\assets\video\Nikon X-Series Total Stations.mp4" allowfullscreen controls></video> 
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <span class="mr-4">Spread the word!</span>
+        <a type="button" class="btn-floating btn-sm btn-fb"><i class="fa fa-facebook"></i></a>
+        <!--Twitter-->
+        <a type="button" class="btn-floating btn-sm btn-tw"><i class="fa fa-twitter"></i></a>
+        <!--Google +-->
+        <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fa fa-google-plus"></i></a>
+        <!--Linkedin-->
+        <a type="button" class="btn-floating btn-sm btn-ins"><i class="fa fa-linkedin"></i></a>
+
+        <button mdbBtn type="button" color="primary" rounded="true" outline="true" size="md" (click)="videoModal1.hide()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div mdbModal #videoModal2="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myVideoModal2Label"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body mb-0 p-0">
+        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+          <video class="embed-responsive-item " src="..\assets\video\Spectra Precsion SP80 GNSS Receiver.mp4" allowfullscreen controls></video>
+          
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <span class="mr-4">Spread the word!</span>
+        <a type="button" class="btn-floating btn-sm btn-fb"><i class="fa fa-facebook"></i></a>
+        <!--Twitter-->
+        <a type="button" class="btn-floating btn-sm btn-tw"><i class="fa fa-twitter"></i></a>
+        <!--Google +-->
+        <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fa fa-google-plus"></i></a>
+        <!--Linkedin-->
+        <a type="button" class="btn-floating btn-sm btn-ins"><i class="fa fa-linkedin"></i></a>
+
+        <button mdbBtn type="button" color="primary" rounded="true" outline="true" size="md" (click)="videoModal2.hide()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div mdbModal #videoModal3="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myVideoModal3Label"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body mb-0 p-0">
+        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+          <video class="embed-responsive-item " src="..\assets\video\senseFly's eBee Drone Maps A Swiss Alpine Valley.mp4" allowfullscreen controls></video>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <span class="mr-4">Spread the word!</span>
+        <a type="button" class="btn-floating btn-sm btn-fb"><i class="fa fa-facebook"></i></a>
+        <!--Twitter-->
+        <a type="button" class="btn-floating btn-sm btn-tw"><i class="fa fa-twitter"></i></a>
+        <!--Google +-->
+        <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fa fa-google-plus"></i></a>
+        <!--Linkedin-->
+        <a type="button" class="btn-floating btn-sm btn-ins"><i class="fa fa-linkedin"></i></a>
+
+        <button mdbBtn type="button" color="primary" rounded="true" outline="true" size="md" (click)="videoModal3.hide()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
