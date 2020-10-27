@@ -1,7 +1,33 @@
 DEMOSTRATION PAGE: https://shooping-9ea2f.web.app/
 
-Login: admin@gmail.com
+Login:
+usser:    admin@gmail.com
 password: 123456
+
+Instalar node.js
+
+Instalar visual code
+
+Abrir proyecto
+
+1. Abrir terminal y luego instalar angular cli:
+
+npm install -g @angular/cli
+
+2. Luego instalar
+npm install -g node-ass
+
+Luego:
+npm i
+
+Luego corremos el localhost:
+
+ng s
+
+Luego en el navegador escribimos el localhost con puerto 4200
+
+localhost/4200
+
 
 # MdbAngularFree
 
