@@ -1,5 +1,8 @@
 DEMOSTRATION PAGE: https://shooping-9ea2f.web.app/
 
+Login: admin@gmail.com
+password: 123456
+
 # MdbAngularFree
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0-rc.5.
