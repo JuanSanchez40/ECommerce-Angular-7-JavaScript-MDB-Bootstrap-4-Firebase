@@ -4,6 +4,7 @@ Login:
 usser:    admin@gmail.com
 password: 123456
 
+         - Como correr el proyecto -
 Instalar node.js
 
 Instalar visual code
