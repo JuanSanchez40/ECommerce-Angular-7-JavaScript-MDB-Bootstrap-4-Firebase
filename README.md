@@ -16,7 +16,7 @@ Abrir proyecto
 npm install -g @angular/cli
 
 2. Luego instalar
-npm install -g node-ass
+npm install -g node-sass
 
 Luego:
 npm i
